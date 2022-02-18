@@ -1,0 +1,13 @@
+sort1 uses: bubble sort
+
+How do you know?: Best overall times on: sorted5000.txt sorted10000.txt sorted50000.txt
+
+sort2 uses: merge sort
+
+How do you know?: Best overall times on: random5000.txt random10000.txt random50000.txt reversed5000.txt reversed10000.txt reversed50000.txt
+
+sort3 uses: selection sort
+
+How do you know?: Process of elimination
+
+Data at https://docs.google.com/spreadsheets/d/1VSiMxflekkW0_H6pxPjxvqVpO_JZox1_hNI_T9j3z90/edit?usp=sharing
