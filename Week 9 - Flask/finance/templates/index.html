@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <hl>Portfolio</hl>
+    <table>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares Owned</th>
+                <th>Current Price</th>
+                <th>Total Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for position in positions %}
+            {% if position.shares_owned > 0 %}
+            <tr>
+                <td>{{ position.symbol }}</td>
+                <td>{{ position.shares_owned }}</td>
+                <td>{{ position.current_price }}</td>
+                <td>{{ position.total_value }}</td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+    <p>Account Cash Balance: {{ account_cash_balance }}</p>
+    <p>Account Total Value: {{ account_total_value }}</p>
+{% endblock %}

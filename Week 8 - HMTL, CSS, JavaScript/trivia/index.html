@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+        </script>
+        <script>
+            function showIncorrect(element) {
+              document.getElementById("incorrect-header").style.display = "block";
+              document.getElementById("correct-header").style.display = "none";
+              element.style.backgroundColor = 'red';
+            }
+
+            function showCorrect(element) {
+              document.getElementById("correct-header").style.display = "block";
+              document.getElementById("incorrect-header").style.display = "none";
+              element.style.backgroundColor = 'green';
+            }
+
+            function confirmAnswer(element) {
+                let input = document.getElementById("airportInput").value;;
+                if (input == "SFO")
+                {
+                    // alert("Correct");
+                    document.getElementById("correct-free-response").style.display = "block";
+                    document.getElementById("incorrect-free-response").style.display = "none";
+                    document.getElementById("airportInput").style.backgroundColor = "green";
+                    document.getElementById("airportInput").style.color = "white";
+                }
+                else
+                {
+                    // alert("Incorrect");
+                    document.getElementById("correct-free-response").style.display = "none";
+                    document.getElementById("incorrect-free-response").style.display = "block";
+                    document.getElementById("airportInput").style.backgroundColor = "red";
+                    document.getElementById("airportInput").style.color = "white";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>What is the capital of California</h3>
+                <button onclick="showIncorrect(this)">San Francisco</button>
+                <button onclick="showIncorrect(this)">Los Angeles</button>
+                <button onclick="showCorrect(this)">Sacramento</button>
+                <button onclick="showIncorrect(this)">San Diego</button>
+                <h5 id="correct-header">Correct!</h5>
+                <h5 id="incorrect-header">Incorrect</h5>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>What is the airport code for San Francisco International Airport?</h3>
+                <input type="text" id="airportInput" autocomplete="off">
+                <button onclick="confirmAnswer(this)">Confirm</button>
+                <h5 id="correct-free-response">Correct!</h5>
+                <h5 id="incorrect-free-response">Incorrect</h5>
+            </div>
+        </div>
+    </body>
+</html>

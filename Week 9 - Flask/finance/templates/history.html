@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <hl>History</hl>
+    <table>
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Symbol</th>
+                <th>Shares Traded</th>
+                <th>Price Per Share</th>
+                <th>Total Cost</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for trade in trades %}
+            <tr>
+                <td>{{ trade.type }}</td>
+                <td>{{ trade.symbol }}</td>
+                <td>{{ trade.share_count }}</td>
+                <td>{{ "{:.2f}".format(trade.share_price) }}</td>
+                <td>{{ "{:.2f}".format(trade.share_price * trade.share_count) }}</td>
+                <td>{{ trade.time }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p>{{ "{:.2f}".format(purchasing_power) }}</p>
+{% endblock %}

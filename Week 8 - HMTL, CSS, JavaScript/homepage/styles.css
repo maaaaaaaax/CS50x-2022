@@ -1,0 +1,34 @@
+.centered
+{
+    text-align: center;
+}
+
+.large
+{
+    font-size: large;
+}
+
+.medium
+{
+    font-size: medium;
+}
+
+.small
+{
+    font-size: small;
+}
+
+.red
+{
+    color: 'red';
+}
+
+.bg-green
+{
+    background-color: 'green';
+}
+
+.border-yellow
+{
+    border-color: 'yellow';
+}
